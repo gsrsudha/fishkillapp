@@ -1,0 +1,39 @@
+﻿.zoomfull
+{
+    background-image: url(images/i_zoomfull.png);
+    position:absolute;
+    top:24px;
+    left:64px;
+    width:40px;
+    height:40px;
+    z-index:99;
+    cursor:pointer;
+}
+
+#mapDiv{
+    height:100%;
+    width:100%;
+}
+
+/* The Modal (background) */
+.myFormDialog {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 99; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 200px; 
+    height: 200px; 
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 1); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+#dijitDialogPaneContent {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
