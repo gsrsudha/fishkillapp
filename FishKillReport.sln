@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FishKillReport", "FishKillReport\FishKillReport.csproj", "{4C5F25A6-2413-4618-8B91-FE441EE0FEBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FishKillFunctionApp", "FishKillFunctionApp\FishKillFunctionApp.csproj", "{9190F4A6-BA32-4313-A36C-AED05FC0F4EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FishKillFunctionApp", "FishKillFunctionApp\FishKillFunctionApp.csproj", "{9190F4A6-BA32-4313-A36C-AED05FC0F4EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FishKillCommonLibrary", "FishKillCommonLibrary\FishKillCommonLibrary.csproj", "{6DD36F90-B2ED-4F29-BEC3-A0A5FDEABFDD}"
 EndProject

@@ -15,19 +15,7 @@ namespace FishKillReport
         {
             //GetRequest(txtName.Text);
             byte[] imgBytes = fileCtrl.FileBytes;
-            PostRequest(imgBytes);
-
-
-            //Response.Redirect("https://fishkillapp.azurewebsites.net/api/ValidateFishKill?name=" + txtName.Text);
-
-            //HttpWebRequest req = (HttpWebRequest)WebRequest.Create("https://fishkillapp.azurewebsites.net/api/ValidateFishKill?name=" + txtName.Text);
-            //req.Method = "GET";
-            //req.ContentType = "application/json";
-            //Stream stream = req.GetRequestStream();
-            //string json = "{\"name\": \"Azure\" }";
-            //byte[] buffer = Encoding.UTF8.GetBytes(json);
-            //stream.Write(buffer, 0, buffer.Length);
-            //HttpWebResponse res = (HttpWebResponse)req.GetResponse();
+            PostRequest(imgBytes);           
         }
 
         async void GetRequest(string name)
@@ -47,7 +35,8 @@ namespace FishKillReport
             }            
         }
 
-        async void PostRequest(byte[] imgBytes)
+        
+        async  void PostRequest(byte[] imgBytes)
         {
             HttpContent reqContent = new ByteArrayContent(imgBytes);
             
@@ -70,6 +59,6 @@ namespace FishKillReport
         private void ShowResponse(string resContent)
         {
             ClientScript.RegisterClientScriptBlock(this.GetType(), "Response Message", "alert('" + resContent + "');", true);
-        }
+        }        
     }
 }

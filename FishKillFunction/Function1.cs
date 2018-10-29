@@ -1,24 +1,25 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using FishKillCommonLibrary;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
-using Microsoft.WindowsAzure.Storage.Blob;
-using FishKillCommonLibrary;
-using System.Collections.Generic;
 using Microsoft.Cognitive.CustomVision.Prediction;
 using Microsoft.Cognitive.CustomVision.Prediction.Models;
-using System.Linq;
+using Microsoft.WindowsAzure.Storage.Blob;
 
-namespace FishKillFunctionApp
+namespace FishKillFunction
 {
-    public static class FishKillValidator
+    
+    public static class Function1
     {
         static CloudBlobContainer _blobContainer;
-        [FunctionName("ValidateFishKill")]
+        [FunctionName("Function1")]
         public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)]HttpRequestMessage req, TraceWriter log)
         {
             try
@@ -70,7 +71,8 @@ namespace FishKillFunctionApp
                     await CosmosDataService.Instance.InsertItemAsync(prediction);
                     return req.CreateResponse(HttpStatusCode.OK, prediction);
                 }
-                else {
+                else
+                {
                     return req.CreateResponse(HttpStatusCode.BadRequest, "Invalid request..");
                 }
             }
@@ -88,7 +90,8 @@ namespace FishKillFunctionApp
                 if (_blobContainer == null)
                 {
                     //You can set your endpoint here as a string in code (ideally this should go in your Function's App Settings)
-                    var containerName = "images";                    
+                    var containerName = "images";
+                    
                     var endpoint = $"https://fishkillappacctblob.blob.core.windows.net/{containerName}?sv=2017-11-09&ss=b&srt=sco&sp=rwdlac&se=2018-10-31T22:48:47Z&st=2018-10-02T14:48:47Z&spr=https&sig=nxSAT3je6PPgH3heP1Jjfrecmu%2BKBZ6qU0g4p6GgvTQ%3D";
                     _blobContainer = new CloudBlobContainer(new Uri(endpoint));
                 }
@@ -105,6 +108,5 @@ namespace FishKillFunctionApp
                 return blockBlob.StorageUri.PrimaryUri.ToString();
             }
         }
-
     }
 }

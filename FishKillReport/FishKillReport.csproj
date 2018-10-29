@@ -71,7 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Index.html" />
     <Content Include="Scripts\config.localhost.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

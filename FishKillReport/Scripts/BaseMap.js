@@ -107,22 +107,26 @@ var Map;
         var damge = document.getElementById("damage").value;
         var number = document.getElementById("number").value;
         var pic = m_pic;
-        var blob = new Blob([pic], {type:'image/jpg'})
+        var blob = new Blob([pic], { type: 'image/jpg' });
+
+        //PageMethods.PostRequest(blob);
+    
+        
         //alert(x + "/n" + y + "/n" + damage + "/n" + number + + "/n" + pic);
         //xhttp = new XMLHttpRequest();
-        var xhr = new XMLHttpRequest();
+        //var xhr = new XMLHttpRequest();
         //xhr.withCredentials = true;
 
-        xhr.addEventListener("readystatechange", function () {
-            if (this.readyState === 4) {
-                console.log(this.responseText);
-            }
-        });
+        //xhr.addEventListener("readystatechange", function () {
+        //    if (this.readyState === 4) {
+        //        console.log(this.responseText);
+        //    }
+        //});
 
-        xhr.open("Post", "http://fishkillapp.azurewebsites.net/api/MakeFishKillPrediction", true);
-        xhr.setRequestHeader("Content-type", "application/");
+        //xhr.open("Post", "http://fishkillapp.azurewebsites.net/api/MakeFishKillPrediction", true);
+        //xhr.setRequestHeader("Content-type", "application/");
         
-        xhr.send(blob);
+        //xhr.send(blob);
     };
 
     Map.Upload = function (evt) {
